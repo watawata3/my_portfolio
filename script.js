@@ -19,19 +19,13 @@ request.onupgradeneeded = function (event) {
 
 window.onload = function () {
     console.log("リフレッシュ時実行された");
-    store.add({
+    /*store.add({
         title: '牛乳を買う',
         note: '朝までに',
         done: false,
         date: '2025-07-09'
-    });
+    });*/
 }
 
 const request = store.getAll();
 
-request.onsuccess = () => {
-  request.result.forEach(task => {
-    console.log(task.title); // 表示用に使える
-    console.log(task.note);  // 定義してなくても使える
-  });
-};
