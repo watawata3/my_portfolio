@@ -1,5 +1,5 @@
 //大まかな構成はここに書く
-const taskList = getElementByID("list");
+const taskList = document.getElementByID("list");
 const request = indexedDB.open('TodoDB', 1); // 第2引数はバージョン
 
 request.onupgradeneeded = function (event) {
