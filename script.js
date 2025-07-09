@@ -13,6 +13,7 @@ request.onupgradeneeded = function (event) {
         });
         //検索に必要な要素はここで定義↓
         //store.createIndex('doneIndex', 'done', { unique: false });
+        //なんで更新されないの？？
     }
 };
 
