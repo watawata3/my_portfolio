@@ -1,8 +1,8 @@
 const taskList = document.getElementById("list");
-const request = indexedDB.open('TodoDB', 1);
+const openReq = indexedDB.open('TodoDB', 1);
 
 // DBのスキーマ定義（最初だけ）
-request.onupgradeneeded = function (event) {
+openReq.onupgradeneeded = function (event) {
     const db = event.target.result;
 
     if (!db.objectStoreNames.contains('tasks')) {
@@ -15,17 +15,17 @@ request.onupgradeneeded = function (event) {
 };
 
 // DBが開かれたら（ここでstoreが使える）
-request.onsuccess = function (event) {
+openReq.onsuccess = function (event) {
     const db = event.target.result;
     // データ追加
-    const tx = db.transaction('tasks', 'readwrite');
+    /*const tx = db.transaction('tasks', 'readwrite');
     const store = tx.objectStore('tasks');
     store.add({
         title: '牛乳を買う',
         note: '朝までに',
         done: false,
         date: '2025-07-09'
-    });
+    });*/
 
     // データ読み込み・表示
     const readTx = db.transaction('tasks', 'readonly');
@@ -41,6 +41,6 @@ request.onsuccess = function (event) {
     };
 };
 
-request.onerror = function (event) {
+openReq.onerror = function (event) {
     console.error("IndexedDBエラー:", event.target.error);
 };
