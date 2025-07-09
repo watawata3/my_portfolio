@@ -18,6 +18,7 @@ request.onupgradeneeded = function (event) {
 
 
 window.onload = function () {
+    console.log("リフレッシュ時実行された");
     store.add({
         title: '牛乳を買う',
         note: '朝までに',
