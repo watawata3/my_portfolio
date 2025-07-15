@@ -6,14 +6,20 @@
     <title>todolist</title>
     <meta name="description" content="ポートフォリオ用todoリスト">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:,">
 </head>
 
 <body>
     <h1>ポートフォリオ用todoリスト</h1>
-    <div id="list">
-    </div>
+
+    <ul id="list"></ul>
+    <form id="addForm">
+        <label>タイトル：<input type="text" name="title"></label>
+        <label>内容：<input type="text" name="content"></label>
+        <label>ID：<input type="int" name="taskId"></label>
+        <button type="submit">送信</button>
+    </form>
 
 
 
